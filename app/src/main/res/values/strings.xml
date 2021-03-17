@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">My First App</string>
+    <string name="registration_title">Лол</string>
+    <string name="signin_title">Кек</string>
+    <string name="enter_btn_text">Войти</string>
+    <string name="registration_btn_text">Регистрация</string>
+    <string name="email_hint">Email</string>
+    <string name="first_name_hint">Имя</string>
+    <string name="second_name_hint">Фамилия</string>
+    <string name="password_hint">Пароль</string>
+    <string name="conf_password_hint">Подтверждение пароля</string>
+    <string name="login_request_text">Уже есть аккаунт? Войти</string>
 </resources>
