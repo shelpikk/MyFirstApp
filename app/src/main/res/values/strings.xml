@@ -10,4 +10,5 @@
     <string name="password_hint">Пароль</string>
     <string name="conf_password_hint">Подтверждение пароля</string>
     <string name="login_request_text">Уже есть аккаунт? Войти</string>
+    <string name="Enter_line">Нет аккаунта? Зарегайся!</string>
 </resources>
