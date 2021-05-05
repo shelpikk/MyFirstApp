@@ -11,4 +11,10 @@
     <string name="conf_password_hint">Подтверждение пароля</string>
     <string name="login_request_text">Уже есть аккаунт? Войти</string>
     <string name="Enter_line">Нет аккаунта? Зарегайся!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="successful_registration">Успешная регистрация!</string>
+    <string name="greetings_message">Привет, рады видеть тебя снова!</string>
+    <string name="check_dialog_title">Необходимо заполнить следующие поля:</string>
+    <string name="possitive_answer">ОК</string>
 </resources>
