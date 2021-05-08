@@ -29,6 +29,7 @@ import java.util.Map;
 public class SigninFragment extends Fragment {
     private TextInputEditText email;
     private TextInputEditText password;
+    private List<TextInputEditText> listOfet = new ArrayList<TextInputEditText>();
     private Callback activity;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -74,6 +75,8 @@ public class SigninFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         email   = view.findViewById(R.id.et_email);
         password = view.findViewById(R.id.et_password);
+        listOfet.add(email);
+        listOfet.add(password);
 
         TextView toRegistration = (TextView) view.findViewById(R.id.tv_to_registration);
         toRegistration.setOnClickListener(new View.OnClickListener() {
@@ -88,10 +91,10 @@ public class SigninFragment extends Fragment {
             public void onClick(View v) {
                 String emailStr = email.getText().toString();
                 String passwordStr = password.getText().toString();
-                Map<String, String> map = new HashMap<>();
+                /*Map<String, String> map = new HashMap<>();
                 map.put("email", emailStr);
-                map.put("password", passwordStr);
-                List<String> list = Utils.checkFields(map);
+                map.put("password", passwordStr);*/
+                List<String> list = Utils.checkFields(listOfet);
                 if (list.isEmpty()) {
                     User user = new User(emailStr, passwordStr);
                     String message = requireActivity().getString(R.string.greetings_message);

@@ -17,6 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.hfad.myfirstapp.model.User;
 import com.hfad.myfirstapp.util.Utils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +29,7 @@ public class RegistrationFragment extends Fragment {
     private TextInputEditText firstName;
     private TextInputEditText secondName;
     private TextInputEditText confirmedPassword;
+    private List<TextInputEditText> listOfet = new ArrayList<TextInputEditText>();
     private Callback activity;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,6 +74,11 @@ public class RegistrationFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bindViews(view);
+        listOfet.add(email);
+        listOfet.add(password);
+        listOfet.add(firstName);
+        listOfet.add(secondName);
+        listOfet.add(confirmedPassword);
         TextView toSignin = (TextView) view.findViewById(R.id.tv_to_signin);
         toSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,13 +98,7 @@ public class RegistrationFragment extends Fragment {
                 String secondNamestr = secondName.getText().toString();
                 String confirmedPasswordstr = confirmedPassword.getText().toString();
 
-                Map<String, String> map = new HashMap<>();
-                map.put("email", emailstr);
-                map.put("password", passwordstr);
-                map.put("Имя", firstNamestr);
-                map.put("Фамилия", secondNamestr);
-                map.put("Подтверждение пароля", confirmedPasswordstr);
-                List<String> list = Utils.checkFields(map);
+                List<String> list = Utils.checkFields(listOfet);
 
                 if (list.isEmpty()) {
                     if (passwordstr.length() > 7 && passwordstr.equals(confirmedPasswordstr)) {

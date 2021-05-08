@@ -1,14 +1,16 @@
 package com.hfad.myfirstapp.util;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class Utils {
-    public static List<String> checkFields(Map<String, String> fields){ ArrayList<String> list = new ArrayList<>();
-        for (Map.Entry<String, String> entry : fields.entrySet()){
-            if (entry.getValue().equals("")){
-                list.add(entry.getKey());
+    public static List<String> checkFields(List<TextInputEditText> fields){ ArrayList<String> list = new ArrayList<>();
+        for (TextInputEditText entry : fields){
+            if (entry.getText().toString().equals("")){
+                list.add(entry.getHint().toString());
             }
         }
         return list;
